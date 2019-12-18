@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.Controllers.DashboardController">
+   <children>
+      <AnchorPane prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Library UI" wrappingWidth="159.98828125" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="13.55078125">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="722.0" prefHeight="27.0" prefWidth="78.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <fx:include source="title.fxml" />
+            </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Text fx:id="hi" layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello ">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Dec 18 15:04:51 UZT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-016f-1877-a37b-000004de8a00 
+on database directory C:\Users\Desmond\IdeaProjects\Library_ui\db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@78308db1 
+Loaded from file:/C:/Users/Desmond/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+java.vendor=JetBrains s.r.o
+java.runtime.version=11.0.4+10-b304.77
+user.dir=C:\Users\Desmond\IdeaProjects\Library_ui
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
