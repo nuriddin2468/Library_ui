@@ -1,0 +1,25 @@
+.parent{
+	-fx-background-color: #fff;
+}
+.sidebar{
+	-fx-background-color: #333645;
+}
+
+.brand{
+	-fx-background-color: #fff;
+}
+
+.sidebarButton{
+	-fx-background-color:#fff;
+
+}
+
+/*.sidebarHbox:hover{
+   -fx-background-color:#ccc;	
+}
+
+*/
+
+.sidebarButton:hover{
+    -fx-background-color:#ccc;	
+}
