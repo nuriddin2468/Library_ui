@@ -22,7 +22,6 @@ public final class UserSession {
 
     public static void setName(String l_name) {
         name = l_name;
-        System.out.println("called setter for name = " + name);
     }
 
     public static void setRole(int l_role) {
@@ -38,13 +37,12 @@ public final class UserSession {
 
     public static UserSession getInstance() {
         if(instance == null) {
-            System.out.println("created new user session instance");
             instance = new UserSession();
         }
         return instance;
     }
 
-    public void cleanUserSession() {
+    public static void cleanUserSession() {
         username = null;// or null
         name = null;// or null
         role = 0;

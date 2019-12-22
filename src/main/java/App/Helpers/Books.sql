@@ -1,0 +1,9 @@
+CREATE TABLE Books(
+    id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY(Start with 1, Increment by 1),
+    title VARCHAR(140) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    author VARCHAR (240) NOT NULL,
+    isbn  VARCHAR (240) NOT NULL,
+    category  VARCHAR (240) NOT NULL,
+    count INT NOT NULL DEFAULT 0
+);

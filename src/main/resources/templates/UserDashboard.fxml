@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="807.0" styleClass="parent" stylesheets="@/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutY="-2.0" prefHeight="612.0" prefWidth="215.0" style="-fx-background-color: #3F2663;" AnchorPane.bottomAnchor="-6.0" AnchorPane.topAnchor="-2.0" >
+         <fx:include source="sidebar.fxml" />
+      </VBox>
+      <Pane layoutX="218.0" layoutY="80.0" prefHeight="104.0" prefWidth="590.0" style="-fx-background-color: #7156DC;" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <Label layoutX="191.0" layoutY="52.0" prefHeight="30.0" prefWidth="106.0" text="Books" textFill="#f2f0f0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="158.0" layoutY="22.0" prefHeight="27.0" prefWidth="106.0" text="/home/books" textFill="#f2f0f0">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="80.0" fitWidth="71.0" layoutX="62.0" layoutY="12.0">
+               <image>
+                  <Image url="@/images/book-2-48.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <VBox layoutX="215.0" layoutY="184.0" prefHeight="406.0" prefWidth="594.0">
+         <children>
+            <HBox prefHeight="247.0" prefWidth="594.0">
+               <children>
+                  <Pane prefHeight="233.0" prefWidth="184.0">
+                     <children>
+                        <Text layoutX="58.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discrete Math" wrappingWidth="126.0" />
+                        <ImageView fitHeight="200.0" fitWidth="157.0" layoutX="10.0" layoutY="10.0">
+                           <image>
+                              <Image url="@/images/s-l300.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="2.5" right="2.5" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="233.0" prefWidth="175.0">
+                     <children>
+                        <Text layoutX="25.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to program in java" />
+                        <ImageView fitHeight="200.0" fitWidth="154.0" layoutX="10.0" layoutY="10.0">
+                           <image>
+                              <Image url="@/images/0133807800.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="2.5" right="2.5" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="623.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #7156DC;" text="Insertion of students" textFill="WHITE" />
+      <Button layoutX="496.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: #7156DC;" text="Insertion of books" textFill="WHITE" />
+   </children>
+</AnchorPane>

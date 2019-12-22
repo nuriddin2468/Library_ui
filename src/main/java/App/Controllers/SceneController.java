@@ -10,8 +10,8 @@ public abstract class SceneController {
     public void changeScene(Stage stage , String fxml) throws IOException {
         Parent pane = FXMLLoader.load(
                 getClass().getResource(fxml));
-        stage.setHeight(500);
-        stage.setWidth(800);
+        stage.setHeight(600);
+        stage.setWidth(900);
 
         stage.getScene().setRoot(pane);
     }

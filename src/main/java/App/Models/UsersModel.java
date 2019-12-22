@@ -19,18 +19,12 @@ public class UsersModel extends Database {
         super();
     }
 
-    public UsersModel(int id, String username, String password, int role) {
+    public UsersModel(int id, String username, String password, String name ,int role) {
         super();
         this.id = id;
         this.username = username;
         this.password = password;
-        this.role = role;
-    }
-
-    public UsersModel(String username, String password, int role) {
-        super();
-        this.username = username;
-        this.password = password;
+        this.name = name;
         this.role = role;
     }
 
@@ -78,37 +72,42 @@ public class UsersModel extends Database {
     @Override
     public void getOne(String key, String val) {
         try {
-            Statement stmnt = Connect().createStatement();
-            ResultSet result = stmnt.executeQuery(String.format("SELECT * FROM Users WHERE %s = '%s' ", key, val));
-            if(result.next()) {
-                username = result.getString("username");
-                password = result.getString("password");
-                role = result.getInt("role");
-                id = result.getInt("id");
-                name = result.getString("name");
+            Statement stmnt;
+            ResultSet result = null;
+            stmnt = Connect().createStatement();
+            if(key == "id"){
+                result = stmnt.executeQuery(String.format("SELECT * FROM Users WHERE %s = %s", key, val));
+            }else {
+                result = stmnt.executeQuery(String.format("SELECT * FROM Users WHERE %s = '%s'", key, val));
             }
+            if (result.next()) {
+                    username = result.getString("username");
+                    password = result.getString("password");
+                    role = result.getInt("role");
+                    id = result.getInt("id");
+                    name = result.getString("name");
+            }
+            stmnt.close();
         }catch(Exception except){
             except.printStackTrace();
         }
 
     }
 
+
+
     @Override
-    public void getOne(String s) {
+    public ResultSet getAll() throws SQLException {
+            Statement stmnt = Connect().createStatement();
+        return stmnt.executeQuery("SELECT * FROM Users");
 
     }
 
-
     @Override
-    public ArrayList<UsersModel> getAll() throws SQLException {
-            Statement stmnt = Connect().createStatement();
-            ResultSet result = stmnt.executeQuery("SELECT * FROM Users");
-            ArrayList<UsersModel> objects = new ArrayList<>();
-            while(result.next()){
-                UsersModel object = new UsersModel(result.getInt("id"), result.getString("username"), result.getString("password"), result.getInt("role"));
-                objects.add(object);
-            }
-            return objects;
+    public ResultSet search(String key, String val) throws SQLException {
+        Statement stmnt = Connect().createStatement();
+        return stmnt.executeQuery(String.format("SELECT * FROM Users WHERE %s = '%s'", key, val));
+
 
     }
 
@@ -117,10 +116,8 @@ public class UsersModel extends Database {
         try {
             Statement stmnt = Connect().createStatement();
             stmnt.execute(String.format("INSERT INTO Users (username , password , name , role) VALUES ('%s', '%s', '%s' , %d)", username , password , name, role));
-            System.out.println("User Inserted");
-
+            stmnt.close();
         }catch(Exception except){
-            System.out.println("Error while inserting the user!");
             except.printStackTrace();
         }
     }
@@ -129,17 +126,20 @@ public class UsersModel extends Database {
     public void update() {
         try {
             Statement stmnt = Connect().createStatement();
-
+            stmnt.executeUpdate(String.format("UPDATE Users SET password = '%s', username = '%s', name = '%s', role = %d WHERE id = %d",password,username,name,role, id));
+            stmnt.close();
         }catch(Exception except){
+            System.out.println("hello");
             except.printStackTrace();
         }
     }
 
     @Override
-    public void delete() {
+    public void delete(int id) {
         try {
             Statement stmnt = Connect().createStatement();
-
+            stmnt.executeUpdate(String.format("DELETE FROM Users WHERE id = %d",id));
+            stmnt.close();
         }catch(Exception except){
             except.printStackTrace();
         }

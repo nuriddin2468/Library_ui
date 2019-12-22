@@ -1,16 +1,18 @@
 package App.Controllers;
 
-import App.Models.Database;
+import App.Models.BooksModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.attribute.UserPrincipalLookupService;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import App.Models.UsersModel;
 import App.Helpers.UserSession;
@@ -26,30 +28,40 @@ public class SignInController extends SceneController implements Initializable {
     private TextField username;
 
     @FXML
+    private Text errorMsg;
+
+    @FXML
     void login(ActionEvent event) throws IOException{
         Stage stage = (Stage) btn_login.getScene().getWindow();
         UsersModel obj = new UsersModel();
         obj.getOne("username", username.getText());
 
         if(obj.getUsername() == null){
-            System.out.println("User not found!");
+            errorMsg.setText("Username not found!");
         }else{
             if(obj.getPassword().equals(password.getText())){
-
-                System.out.println("OK!");
                 UserSession.setUsername(obj.getUsername());
-                System.out.println("object name = " + obj.getUsername());
                 UserSession.setName(obj.getName());
                 UserSession.setRole(obj.getRole());
-                this.changeScene(stage , "/templates/dashboard.fxml");
+                errorMsg.setText("");
+                this.changeScene(stage , "/templates/AdminDashboardUser.fxml");
             }else{
-                System.out.println("Password is incorrect!");
+                errorMsg.setText("Password is incorrect!");
             }
         }
 
     }
 
+
+    @FXML
+    void register(MouseEvent event) throws IOException {
+        Stage stage = (Stage) btn_login.getScene().getWindow();
+        this.changeScene(stage , "/templates/SignUp.fxml");
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

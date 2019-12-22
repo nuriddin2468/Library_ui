@@ -18,9 +18,9 @@ public abstract class Database {
     }
 
     public abstract void getOne(String key, String val);
-    public abstract void getOne(String s);
-    public abstract ArrayList getAll() throws SQLException;
+    public abstract ResultSet getAll() throws SQLException;
     public abstract void insert();
+    public abstract ResultSet search(String key, String val) throws SQLException;
     public abstract void update();
-    public abstract void delete();
+    public abstract void delete(int id);
 }
